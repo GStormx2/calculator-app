@@ -6,7 +6,7 @@ export const useTheme = () => {
     return useContext(ThemeContext);
 }
 
-export const ThemeProvider = ({children}) => {
+const ThemeProvider = ({children}) => {
     const [theme, setTheme] = useState('');
     const value = {
         theme,
@@ -19,3 +19,5 @@ export const ThemeProvider = ({children}) => {
         </ThemeContext.Provider>
     );
 }
+
+export default ThemeProvider;
