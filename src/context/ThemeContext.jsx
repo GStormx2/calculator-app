@@ -7,10 +7,10 @@ export const useTheme = () => {
 }
 
 const ThemeProvider = ({children}) => {
-    const [theme, setTheme] = useState('');
+    const [theme, setTheme] = useState({name: '', num: 1, previousNum: 1});
     const value = {
         theme,
-        setTheme
+        setTheme,
     };
 
     return (

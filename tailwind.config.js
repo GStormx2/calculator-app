@@ -2,9 +2,19 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ['Spartan', 'sans-serif'],
+      serif: ['Spartan', 'serif'],
+    },
     extend: {
       width: {
         '540': '540px',
+        switcher: '79px',
+        'switcher-ball' : '16px',
+      },
+      height: {
+        switcher: '24px',
+        'switcher-ball': '16px',
       },
       maxWidth: {
         '540': '540px', 

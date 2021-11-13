@@ -48,4 +48,9 @@
         --color-text-base: #FFE53D;
         --color-text-eq: #1A2327; 
     }
+    .theme-switcher {
+        width: 71px;
+        height: 26px;
+        border-radius: 13px;
+    }
 }
