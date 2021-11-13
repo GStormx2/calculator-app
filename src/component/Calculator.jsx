@@ -9,12 +9,14 @@ const Calculator = () => {
     const { theme } = useTheme();
     
     return (
-        <div className={"bg-skin-fill w-screen h-screen " + theme}>
-            <Header />
-            <DataProvider>
-                <Display />
-                <Body />
-            </DataProvider>
+        <div className={"flex h-screen justify-center items-center bg-skin-fill" + theme}>
+            <div className="w-540">
+                <Header />
+                <DataProvider>
+                    <Display />
+                    <Body />
+                </DataProvider>
+            </div>
         </div>
     );
   }
