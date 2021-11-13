@@ -3,6 +3,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        '540': '540px',
+      },
+      maxWidth: {
+        '540': '540px', 
+      },
+      minWidth: {
+        '375': '375px',
+      },
       textColor: {
         skin: {
           numpad: 'var(--color-text-numpad)',
