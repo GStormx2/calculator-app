@@ -11,17 +11,17 @@ const ThemeSwitcher = () => {
         e.preventDefault();
         const num = e.target.value;
         
-        if (num === "1") { 
+        if (num === 1) { 
             const themeObj = {name: '', num: 1, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('-left-2');
         }
-        else if (num === "2" ) { 
+        else if (num === 2 ) { 
             const themeObj = {name: 'ice-cream', num: 2, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('left-5');
         }
-        else if (num === "3") {
+        else if (num === 2) {
             const themeObj = {name: 'neon-purple', num: 3, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('left-12');
@@ -35,9 +35,9 @@ const ThemeSwitcher = () => {
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>
-                <button onClick={onThemeChange} value="1" className="w-full h-full"></button>
-                <button onClick={onThemeChange} value="2" className="w-full h-full"></button>
-                <button onClick={onThemeChange} value="3" className="w-full h-full"></button>
+                <button onClick={onThemeChange} value={1} className="w-full h-full"></button>
+                <button onClick={onThemeChange} value={2} className="w-full h-full"></button>
+                <button onClick={onThemeChange} value={3} className="w-full h-full"></button>
             </div>
             <Ball pos={position}/>
         </div>
