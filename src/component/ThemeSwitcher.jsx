@@ -6,7 +6,7 @@ import Ball from './Ball';
 const ThemeSwitcher = () => {
     const { theme, setTheme } = useTheme();
     const [position, setPosition] = useState('-left-2');
-    console.log('hey');
+    
     const onThemeChange = (e) => {
         e.preventDefault();
         const num = e.target.value;
@@ -30,8 +30,8 @@ const ThemeSwitcher = () => {
     }
 
     return (
-        <div className="relative flex items-center w-switcher h-switcher bg-skin-display rounded-xl">
-            <div className="absolute z-10 grid grid-cols-3 grid-rows-2 justify-center text-center w-full text-skin-base text-sm -top-5">
+        <div className="relative flex items-center w-switcher h-switcher bg-skin-display transition-colors rounded-xl">
+            <div className="absolute z-10 grid grid-cols-3 grid-rows-2 justify-center text-center w-full text-skin-base text-theme transition-colors text-sm -top-5">
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>

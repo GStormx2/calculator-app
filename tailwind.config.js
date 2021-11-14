@@ -11,16 +11,28 @@ module.exports = {
         '540': '540px',
         switcher: '79px',
         'switcher-ball' : '16px',
+        btn : '101px',
+        'btn-cmd' : '227px', 
       },
       height: {
         switcher: '24px',
         'switcher-ball': '16px',
+        'btn-top': '64px',
+        'btn-bot': '59px',
       },
       maxWidth: {
         '540': '540px', 
       },
       minWidth: {
         '375': '375px',
+      },
+      fontSize: {
+          title: ['32px', {letterSpacing: '-0.53px'}],
+          display: ['48px', {letterSpacing: '-0.8px'}],
+          numpad: ['32px', {letterSpacing: '-0.53'}],
+          command: ['20px', {letterSpacing: '-0.33'}],
+          theme: ['12px', {letterSpacing: '1px'}],
+
       },
       textColor: {
         skin: {
@@ -41,12 +53,17 @@ module.exports = {
           'hover-accent': 'var(--color-accent-hover)',
           'hover-numpad': 'var(--color-button-numpad-hover)',
           'hover-command': 'var(--color-button-command-hover)',
+          'numpad-shadow' : 'var(--color-button-numpad-shadow)',
+          'command-shadow': 'var(--color-button-command-shadow)',
+          'accent-shadow': 'var(--color-accent-shadow)',
         }
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      cursor: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }
