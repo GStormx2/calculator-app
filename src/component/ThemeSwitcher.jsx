@@ -10,18 +10,19 @@ const ThemeSwitcher = () => {
     const onThemeChange = (e) => {
         e.preventDefault();
         const num = e.target.value;
-        
-        if (num === 1) { 
+        console.log(typeof num);
+
+        if (num === "1") { 
             const themeObj = {name: '', num: 1, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('-left-2');
         }
-        else if (num === 2 ) { 
+        else if (num === "2") { 
             const themeObj = {name: 'ice-cream', num: 2, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('left-5');
         }
-        else if (num === 2) {
+        else if (num === "3") {
             const themeObj = {name: 'neon-purple', num: 3, previousNum: theme.num};
             setTheme({...themeObj});
             setPosition('left-12');
