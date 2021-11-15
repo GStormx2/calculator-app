@@ -1,6 +1,9 @@
 import React from 'react';
+import { useData } from '../context/DataContext';
 
 const Button = (props) => {
+    const { operand } = useData();
+
     let margin = '';
     if (props.children === 'DEL' || props.children === 'RESET' || props.children === '=') {
         margin = 'mt-4';
@@ -10,7 +13,7 @@ const Button = (props) => {
     }
     
     const backDivStyles = props.w + " " + props.bg + " " + props.shadow;
-    const frontDivStyles = props.w + " " + props.bg + " " + props.hover;
+    const frontDivStyles = props.w + " " + (props.val === operand ? 'bg-skin-hover-numpad' : props.bg) + " " + props.hover;
     const textStyles = margin + " " + props.color + " " + props.textSize
     
 
