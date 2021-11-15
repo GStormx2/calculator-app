@@ -2,6 +2,9 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      sm: {'max': '540px'},
+    },
     fontFamily: {
       sans: ['Spartan', 'sans-serif'],
       serif: ['Spartan', 'serif'],
@@ -12,7 +15,10 @@ module.exports = {
         switcher: '79px',
         'switcher-ball' : '16px',
         btn : '101px',
-        'btn-cmd' : '227px', 
+        'btn-cmd' : '227px',
+        '327': '327px',
+         'btn-sm' : '60px',
+         'btn-cmd-sm': '133px',
       },
       height: {
         switcher: '24px',
@@ -20,6 +26,7 @@ module.exports = {
         'btn-top': '64px',
         'btn-bot': '59px',
         display : '128px',
+        'display-sm': '100px'
       },
       maxWidth: {
         '540': '540px', 
@@ -28,12 +35,14 @@ module.exports = {
         '375': '375px',
       },
       fontSize: {
-          title: ['32px', {letterSpacing: '-0.53px'}],
-          display: ['48px', {letterSpacing: '-0.8px'}],
-          numpad: ['32px', {letterSpacing: '-0.53'}],
-          command: ['20px', {letterSpacing: '-0.33'}],
-          theme: ['12px', {letterSpacing: '1px'}],
-
+        title: ['32px', {letterSpacing: '-0.53px'}],
+        display: ['48px', {letterSpacing: '-0.8px'}],
+        numpad: ['32px', {letterSpacing: '-0.53'}],
+        command: ['20px', {letterSpacing: '-0.33'}],
+        theme: ['12px', {letterSpacing: '1px'}],
+        'display-sm': ['32px', {letterSpacing: '-0.53px'}],
+        'numpad-sm': ['28px', {letterSpacing: '-0.47px'}],
+        'command-sm': ['16px', {letterSpacing: '-0.27px'}],
       },
       textColor: {
         skin: {

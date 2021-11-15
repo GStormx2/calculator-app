@@ -10,7 +10,7 @@ const Calculator = () => {
     
     return (
         <div className={"flex h-screen justify-center items-center bg-skin-fill transition-all " + theme.name}>
-            <div className="w-540">
+            <div className="sm:w-327 w-540">
                 <Header />
                 <DataProvider>
                     <Display />
