@@ -7,10 +7,23 @@ export const useData = () => {
 }
 
 export const DataProvider = ({children}) => {
-    const [data, setData] = useState('');
+    const [expecting, setExpecting] = useState('');
+    const [display, setDisplay] = useState('0');
+    const [input, setInput] = useState(0);
+    const [operand, setOperand] = useState('');
+    const [decimalFlag, setDecimalFlag] = useState(false);
+    
     const value = {
-        data,
-        setData
+        input,
+        setInput,
+        operand,
+        setOperand,
+        decimalFlag,
+        setDecimalFlag,
+        display,
+        setDisplay,
+        expecting,
+        setExpecting
     };
     
     return (

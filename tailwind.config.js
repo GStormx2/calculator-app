@@ -19,6 +19,7 @@ module.exports = {
         'switcher-ball': '16px',
         'btn-top': '64px',
         'btn-bot': '59px',
+        display : '128px',
       },
       maxWidth: {
         '540': '540px', 
@@ -39,7 +40,8 @@ module.exports = {
           numpad: 'var(--color-text-numpad)',
           command: 'var(--color-text-command)',
           base: 'var(--color-text-base)',
-          eq: 'var(--color-text-eq)', 
+          eq: 'var(--color-text-eq)',
+          accent: 'var(--color-accent)', 
         }
       },
       backgroundColor: {

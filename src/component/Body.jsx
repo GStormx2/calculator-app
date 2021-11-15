@@ -1,10 +1,89 @@
 import React from 'react';
 import Button from './Button';
+import { useData } from '../context/DataContext';
+import { isNumerical, isOperand, calculate } from '../lib/helpers';
 
 const Body = () => {
-    
-    const handleClick = (e) => {
-       
+    const { display, setDisplay, setInput, operand, setOperand, input, decimalFlag, setDecimalFlag, expecting, setExpecting } = useData();
+    const handleClick = (value) => {
+       if (value === 'DEL' && display !== '0' && expecting === 'operand') {
+            //const newNumber = display.slice(0, display.length - 1);
+            setDisplay('');
+            setDecimalFlag(false);
+            
+        }
+        else if (value === 'RESET') {
+            setInput(0);
+            setOperand('');
+            setDisplay('0');
+            setExpecting('');
+            setDecimalFlag(false);
+        }
+        else if (isNumerical(value)) {
+            if (expecting === '') {
+                if(value === '.' && !decimalFlag) {
+                    setDecimalFlag(true)
+                    value = '0.';
+                }
+                setDisplay(String(value));
+                setExpecting('operand');
+            }
+            else if (expecting === 'number') {
+                setInput(display);
+                if (value !== '.') {
+                    setDisplay(String(value));
+                }
+                else if (value === '.' && !decimalFlag) {
+                    setDecimalFlag(false);
+                    setDisplay(String(value));
+                }
+                setExpecting('operand');
+            }
+            else if (expecting === 'operand') {
+                if (value !== '.') {
+                    setDisplay(display + value);
+                }
+                else if (value === '.' && !decimalFlag) {
+                    setDisplay(display + '.');
+                    setDecimalFlag(true);
+                }
+            }
+        }
+        else if (isOperand(value)) {
+             if (expecting === '') {
+                setOperand(value);
+                setDecimalFlag(false);
+                setExpecting('number');
+             }
+             else if (expecting === 'number') {
+                 setOperand(value);
+             }
+             else if (expecting === 'operand') {
+                 if (operand === '') {
+                     setOperand(value);
+                     setExpecting('number');
+                     setDecimalFlag(false);
+                 }
+                 else {
+                     const res = calculate(Number(input), Number(display), operand);
+                     setDisplay(res.toFixed(4));
+                     setOperand(value);
+                     setExpecting('number');
+                     setDecimalFlag(false);
+                 }
+             }
+        }
+        else if (value === '=') {
+            if (expecting === 'operand') {
+                if (operand !== '') {
+                    const res = calculate(Number(input), Number(display), operand);
+                    setDisplay(res.toFixed(4));
+                    setOperand('');
+                    setExpecting('');
+                    setDecimalFlag(false);
+                }
+            }
+        }
     }
 
     return (

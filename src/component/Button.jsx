@@ -17,7 +17,7 @@ const Button = (props) => {
     return (
         <div className={"relative h-btn-top rounded-xl transition-colors " + backDivStyles}>
             <div onClick={() => props.onclick(props.val)} className={"absolute z-20 h-btn-bot rounded-xl text-center transition-colors hover:cursor-pointer " + frontDivStyles}>
-                <p className={"font-bold text-center transition-colors " + textStyles}>{props.children}</p>
+                <p className={"font-bold text-center transition-colors select-none " + textStyles}>{props.children}</p>
             </div>
         </div>
     )
